@@ -1,32 +1,37 @@
 @font-face {
-    font-family: ClashDisplay-Regular;
-    src: url(/assets/Fonts/OTF/ClashDisplay-Light.otf);
+    font-family: 'ClashDisplay-Regular';
+    src: url('./Fonts/OTF/ClashDisplay-Regular.otf');
 }
+
 @font-face {
-    font-family: ClashDisplay-Bold;
-    src: url(/assets/Fonts/OTF/ClashDisplay-Bold.otf);
+    font-family: 'ClashDisplay-Light';
+    src: url('./Fonts/OTF/ClashDisplay-Light.otf');
 }
+
 @font-face {
-    font-family: ClashDisplay-Extralight;
-    src: url(/assets/Fonts/OTF/ClashDisplay-Extralight.otf);
+    font-family: 'ClashDisplay-Extralight';
+    src: url('./Fonts/OTF/ClashDisplay-Extralight.otf');
 }
+
 @font-face {
-    font-family: ClashDisplay-Light;
-    src: url(/assets/Fonts/OTF/ClashDisplay-Light.otf);
+    font-family: 'ClashDisplay-Medium';
+    src: url('./Fonts/OTF/ClashDisplay-Medium.otf');
 }
+
 @font-face {
-    font-family: ClashDisplay-Medium;
-    src: url(/assets/Fonts/OTF/ClashDisplay-Medium.otf);
+    font-family: 'ClashDisplay-Semibold';
+    src: url('./Fonts/OTF/ClashDisplay-Semibold.otf');
 }
+
 @font-face {
-    font-family: ClashDisplay-SemiBold;
-    src: url(/assets/Fonts/OTF/ClashDisplay-Semibold.otf);
+    font-family: 'ClashDisplay-Bold';
+    src: url('./Fonts/OTF/ClashDisplay-Bold.otf');
 }
 
 *{
     margin:0;
     padding: 0;
-
+   
 }
 
 body{
@@ -207,7 +212,7 @@ body{
     border: 7px;
     margin:  40px 95px;
     font-family: ClashDisplay-Regular;
-    /*e fshita nji rresht se mu duk i tepert*/
+    /* display: flex; */
     display: flex;
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.63);
     -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.63);
