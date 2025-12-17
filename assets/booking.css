@@ -370,3 +370,19 @@ body{
     font-family: ClashDisplay-Regular;
     padding-bottom: 20px;
 }
+
+.ticket-new {
+    background-color: #FF3D00;
+    padding: 5px 20px;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.ticket-new a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
