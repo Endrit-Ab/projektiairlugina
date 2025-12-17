@@ -236,7 +236,7 @@ fieldset legend{
     margin: 0 300px 0;
     width: 640px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
