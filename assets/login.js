@@ -49,7 +49,7 @@ function validateForm() {
 }
 
 document.getElementById('togglePassword').addEventListener('click', function () {
-    const passwordField = document.getElementById('passwordField'); 
+    const passwordField = document.getElementById('passwordFied'); 
 
     if (passwordField.type === 'password') {
         passwordField.type = 'text'; 
