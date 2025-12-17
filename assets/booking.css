@@ -34,15 +34,15 @@ body{
 }
 
 .container{
-    /* margin: 15px 104px; */
+    
 
 }
 
 .navbar{
-    /* margin: 15px 104px; */
+    
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     width: 100%;
-    background-color: #ffffff;
+    background-color: white;
     display: flex;
     height: 87px;
 
@@ -369,4 +369,20 @@ body{
 .lugina-logo img{
     font-family: ClashDisplay-Regular;
     padding-bottom: 20px;
+}
+
+.ticket-new {
+    background-color: #FF3D00;
+    padding: 5px 20px;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.ticket-new a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width: 100%;
 }
