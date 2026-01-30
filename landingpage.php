@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AirLugina - Live & Travel</title>
-    <link rel="stylesheet" href="/assets/landingpage.css">
+    <link rel="stylesheet" href="assets/landingpage.css">
 </head>
 
 <body>
@@ -20,15 +20,15 @@
          
           <nav class="navbar">
             <div style="display: flex;" class="left-nav">
-              <img style="margin-right: 5px;" src="/assets/Images/logo.png" alt=""> 
+              <img style="margin-right: 5px;" src="assets/Images/logo.png" alt=""> 
               <a href="#">Find Flight</a>
             </div>
             <div class="logo">
-              <span><img src="/assets/Images/AirLuginaBARDH.png" alt=""></span>
+              <span><img src="assets/Images/AirLuginaBARDH.png" alt=""></span>
             </div>
             <div class="buttons">
-              <button class="log"><a href="/login.html">Login</a></button>
-              <button class="sig"><a href="/signup.html">Sign up</a></button>
+              <button class="log"><a href="login.php">Login</a></button>
+              <button class="sig"><a href="signup.php">Sign up</a></button>
             </div>
           </nav>
     
@@ -41,7 +41,7 @@
     
       
       <div class="form-container">
-        <div> <h2 style="font-size: 1em; display: flex; align-items: center;"><img src="/assets/Images/airplanee.png" alt="icon" style="padding-right: 6px;"> Flights</h2></div>
+        <div> <h2 style="font-size: 1em; display: flex; align-items: center;"><img src="assets/Images/airplanee.png" alt="icon" style="padding-right: 6px;"> Flights</h2></div>
         <form action="#">
           <div class="form-group">
             <div>
@@ -94,7 +94,7 @@
           </div>
   
     
-          <button type="submit" class="submit-btn" ><a href="./deals.html">Show Flights</a></button>
+          <button type="submit" class="submit-btn" ><a href="deals.php">Show Flights</a></button>
         </form>
       </div>
 
@@ -106,12 +106,12 @@
             <p>Search Flights & Places Hire to our most popular destinations</p>
           </div>
           <div>
-            <button class="submit-btn"><a href="/deals.html">Show More</a></button>
+            <button class="submit-btn"><a href="deals.php">Show More</a></button>
           </div>
         </div>
         <div class="cards">
           <div class="card">
-            <img src="/assets/Images/Frame 197-1.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Frame 197-1.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">Istanbul, Turkey</h3>
@@ -119,7 +119,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Frame 197-2.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Frame 197-2.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">Sydney, Australia</h3>
@@ -127,7 +127,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Frame 197.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Frame 197.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">Baku, Azerbaijan</h3>
@@ -135,7 +135,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Frame 74.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Frame 74.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">Malé, Maldives</h3>
@@ -143,7 +143,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Rectangle 3-1.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Rectangle 3-1.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">Paris, France</h3>
@@ -151,7 +151,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Rectangle 3-2.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Rectangle 3-2.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">New York, US</h3>
@@ -159,7 +159,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Rectangle 3.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Rectangle 3.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">London, UK</h3>
@@ -167,7 +167,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Rectangle 4-1.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Rectangle 4-1.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">Tokyo, Japan</h3>
@@ -175,7 +175,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="/assets/Images/Rectangle 4.png" alt="Card Image" class="card-image">
+            <img src="assets/Images/Rectangle 4.png" alt="Card Image" class="card-image">
           
             <div class="card-content">
               <h3 class="card-title">Dubai, UAE</h3>
@@ -189,12 +189,12 @@
         <div class="cardd">
           <h1 style="font-size: 3rem; margin-bottom: 2px;">Flights</h1>
           <p style="font-size: 1rem; margin-bottom: 20px;">Search Flights & Places Hire to our most popular destinations</p>
-          <button style="display: flex;" class="submit-btn"><i><img src="./assets/Images/tg.png" style="padding-right: 6px;" alt=""></i><a href="./deals.html">Show Filghts</a></button>
+          <button style="display: flex;" class="submit-btn"><i><img src=".assets/Images/tg.png" style="padding-right: 6px;" alt=""></i><a href="deals.php">Show Filghts</a></button>
         </div>
         <div class="cardd2">
           <h1 style="font-size: 3rem; margin-bottom: 2px;">Cheap Flights</h1>
           <p style="font-size: 1rem; margin-bottom: 20px;">Search Flights & Places Hire to our most popular destinations</p>
-          <button style="display: flex;" class="submit-btn"><i><img src="./assets/Images/tg.png" style="padding-right: 6px;" alt=""></i><a href="./deals.html">Show Filghts</a></button>
+          <button style="display: flex;" class="submit-btn"><i><img src=".assets/Images/tg.png" style="padding-right: 6px;" alt=""></i><a href="deals.php">Show Filghts</a></button>
         </div>
      </div>
      
@@ -202,10 +202,10 @@
       <div class="footer">
         <div class="lugina-logo">
             <div class="air-img">
-                <img src="/assets/Images/AirLugina.png" alt="Air-Lugina">
+                <img src="assets/Images/AirLugina.png" alt="Air-Lugina">
             </div>
             <div class="social-medias">
-                <img src="/assets/Images/Social-medias.png" alt="Social-Medias">
+                <img src="assets/Images/Social-medias.png" alt="Social-Medias">
             </div>
         </div>
         <div class="our-destinations">

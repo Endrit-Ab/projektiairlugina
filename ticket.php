@@ -21,17 +21,17 @@
                     </div>
                 </div>
                 <div class="logo" id="img-logo">
-                    <img src="/Assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
+                    <img src="assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
                 </div>
                 <div class="user-logo">
                     <div class="user-img">
-                        <img src="/Assets/Images/Userimage.jpeg" alt="User-logo">
+                        <img src="assets/Images/Userimage.jpeg" alt="User-logo">
                     </div>
                     <div class="user-name">
                         <p>Ediar H.</p>
                     </div>
                     <div class="arrow-down">
-                        <img src="/Assets/Images/arrow-down.png" alt="arrow-down">
+                        <img src="assets/Images/arrow-down.png" alt="arrow-down">
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
 
         </div>
         <div class="loc">
-            <img src="/Assets/Images/location-logo.png" alt="location-logo">
+            <img src="assets/Images/location-logo.png" alt="location-logo">
             <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
         </div>
         <div class="ticket-box">
@@ -69,7 +69,7 @@
                     <div class="code-container">
                         <div class="date-container">
                             <div class="date-vector">
-                                <img src="/Assets/Images/date-vector.png" alt="date">
+                                <img src="assets/Images/date-vector.png" alt="date">
                             </div>
                             <div class="date-text">
                                 <h4>Date</h4>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="date-container">
                             <div class="date-vector">
-                                <img src="/Assets/Images/timee-vector.png" alt="flight-time">
+                                <img src="assets/Images/timee-vector.png" alt="flight-time">
                             </div>
                             <div class="date-text">
                                 <h4>Flight time</h4>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="date-container">
                             <div class="date-vector">
-                                <img src="/Assets/Images/gate-vector.png" alt="gate">
+                                <img src="assets/Images/gate-vector.png" alt="gate">
                             </div>
                             <div class="date-text">
                                 <h4>Gate</h4>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="date-container">
                             <div class="date-vector">
-                                <img src="/Assets/Images/seat-vector.png" alt="seat">
+                                <img src="assets/Images/seat-vector.png" alt="seat">
                             </div>
                             <div class="date-text">
                                 <h4>Seat</h4>
@@ -118,7 +118,7 @@
                             <p>Preshevë(AL)</p>
                         </div>
                         <div class="img">
-                            <img src="/Assets/Images/estimated-plane.png" alt="plane">
+                            <img src="assets/Images/estimated-plane.png" alt="plane">
                         </div>
                         <div class="estimated-time">
                             <h1>10:00pm</h1>
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <div class="code">
-                        <img src="/Assets/Images/qr-code.png" alt="code">
+                        <img src="assets/Images/qr-code.png" alt="code">
                     </div>
                 </div>
             </div>
@@ -178,10 +178,10 @@
     <div class="footer">
         <div class="lugina-logo">
             <div class="air-img">
-                <img src="/Assets/Images/AirLugina-footer.png" alt="Air-Lugina">
+                <img src="assets/Images/AirLugina-footer.png" alt="Air-Lugina">
             </div>
             <div class="social-medias">
-                <img src="/Assets/Images/Social-medias.png" alt="Social-Medias">
+                <img src="assets/Images/Social-medias.png" alt="Social-Medias">
             </div>
         </div>
         <div class="our-destinations">

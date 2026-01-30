@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arrives</title>
-    <link rel="stylesheet" href="Assets/arrives.css">
+    <link rel="stylesheet" href="assets/arrives.css">
 </head>
 
 <body>
@@ -14,14 +14,14 @@
             <div class="navbar-elements">
                 <div class="flights">
                     <div class="plane-logo">
-                        <img src="Assets/Images/plane.logo.png" alt="small-plane">
+                        <img src="assets/Images/plane.logo.png" alt="small-plane">
                     </div>
                     <div class="flight-name">
                         <p>Find Flight</p>
                     </div>
                 </div>
                 <div class="logo" id="img-logo">
-                    <img src="Assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
+                    <img src="assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
                 </div>
                 <div class="user-logo">
                     <div class="user-img">
@@ -31,7 +31,7 @@
                         <p>Ediar H.</p>
                     </div>
                     <div class="arrow-down">
-                        <img src="Assets/Images/arrow-down.png" alt="arrow-down">
+                        <img src="assets/Images/arrow-down.png" alt="arrow-down">
                     </div>
                 </div>
 
@@ -48,41 +48,41 @@
                 </div>
                 <div class="location-btn">
                     <div class="location">
-                        <img src="Assets/Images/location-logo.png" alt="location-logo">
+                        <img src="assets/Images/location-logo.png" alt="location-logo">
                         <p>Gumussuyu Mah.Inonu Cd.No:8,Istanbul 34437</p>
                     </div>
                     <div class="btn">
-                        <button type="submit"><a href="./card.html">Book now</a></button>
+                        <button type="submit"><a href="card.php">Book now</a></button>
                     </div>
                 </div>
             </div>
             <div class="big-plane">
-                <img src="Assets/Images/big-plane.png" alt="Big-plane">
+                <img src="assets/Images/big-plane.png" alt="Big-plane">
             </div>
             <div class="h2-text">
                 <h2>Basic Economy Features</h2>
             </div>
 
             <div class="grid-container">
-                <div class="grid-item"><img src="Assets/Images/Frame 186.png" alt="1"></div>
-                <div class="grid-item"><img src="Assets/Images/Frame 142.png" alt="2"></div>
-                <div class="grid-item"><img src="Assets/Images/Frame 184.png" alt="3"></div>
-                <div class="grid-item"><img src="Assets/Images/Frame 185.png" alt="4"></div>
-                <div class="grid-item"><img src="Assets/Images/Frame 187.png" alt="5"></div>
-                <div class="grid-item"><img src="Assets/Images/Frame 189.png" alt="6"></div>
-                <div class="grid-item"><img src="Assets/Images/Frame 142.png" alt="7"></div>
-                <div class="grid-item"><img src="Assets/Images/Frame 182.png" alt="8"></div>
-                <div class="grid-item last"><img src="Assets/Images/Frame 186.png" alt="9"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 186.png" alt="1"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 142.png" alt="2"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 184.png" alt="3"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 185.png" alt="4"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 187.png" alt="5"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 189.png" alt="6"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 142.png" alt="7"></div>
+                <div class="grid-item"><img src="assets/Images/Frame 182.png" alt="8"></div>
+                <div class="grid-item last"><img src="assets/Images/Frame 186.png" alt="9"></div>
             </div>
             <div class="policies">
                 <div class="emirates">
                     <h2>Emirates Airlines Policies</h2>
                 </div>
                 <div class="pre-flight">
-                    <div class="cleaning"><img src="Assets/Images/time-vector.png" alt="time">
+                    <div class="cleaning"><img src="assets/Images/time-vector.png" alt="time">
                         <p>Pre-flight cleaning, installation of cabin HEPA filters.</p>
                     </div>
-                    <div class="cleaning"><img src="Assets/Images/time-vector.png" alt="time">
+                    <div class="cleaning"><img src="assets/Images/time-vector.png" alt="time">
                         <p>Pre-flight health screening questions.</p>
                     </div>
                 </div>
@@ -98,10 +98,10 @@
                 </div>
                 <div class="plane-accesories">
                     <div class="e-logo">
-                        <img src="Assets/Images/Emirtaes-logo.png" alt="Emirate-logo">
+                        <img src="assets/Images/Emirtaes-logo.png" alt="Emirate-logo">
                     </div>
                     <div class="wifi-logo">
-                        <img src="Assets/Images/Accessories.png" alt="Accessories">
+                        <img src="assets/Images/Accessories.png" alt="Accessories">
                     </div>
                 </div>
                 <div class="plane-arrive">
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     <div class="plane-direction">
-                        <img src="Assets/Images/Plane-direction.png" alt="plane-direction">
+                        <img src="assets/Images/Plane-direction.png" alt="plane-direction">
                     </div>
                     <div class="newark">
                         <div class="inline">
@@ -139,10 +139,10 @@
                 </div>
                 <div class="plane-accesories">
                     <div class="e-logo">
-                        <img src="Assets/Images/Emirtaes-logo.png" alt="Emirate-logo">
+                        <img src="assets/Images/Emirtaes-logo.png" alt="Emirate-logo">
                     </div>
                     <div class="wifi-logo">
-                        <img src="Assets/Images/Accessories.png" alt="Accessories">
+                        <img src="assets/Images/Accessories.png" alt="Accessories">
                     </div>
                 </div>
                 <div class="plane-arrive">
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                     <div class="plane-direction">
-                        <img src="Assets/Images/Plane-direction.png" alt="">
+                        <img src="assets/Images/Plane-direction.png" alt="">
                     </div>
                     <div class="newark">
                         <div class="inline">
@@ -179,10 +179,10 @@
         <div class="footer">
             <div class="lugina-logo">
                 <div class="air-img">
-                    <img src="Assets/Images/AirLugina-footer.png" alt="Air-Lugina">
+                    <img src="assets/Images/AirLugina-footer.png" alt="Air-Lugina">
                 </div>
                 <div class="social-medias">
-                    <img src="Assets/Images/Social-medias.png" alt="Social-Medias">
+                    <img src="assets/Images/Social-medias.png" alt="Social-Medias">
                 </div>
             </div>
             <div class="our-destinations">

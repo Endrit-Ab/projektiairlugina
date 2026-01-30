@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARD</title>
-    <link rel="stylesheet" href="Assets/card.css">
+    <link rel="stylesheet" href="assets/card.css">
 </head>
 <body>
     <div class="container">
@@ -12,24 +12,24 @@
             <div class="navbar-elements">
                 <div class="flights">
                     <div class="plane-logo">
-                        <img src="Assets/Images/plane.logo.png" alt="small-plane">
+                        <img src="assets/Images/plane.logo.png" alt="small-plane">
                     </div>
                     <div class="flight-name">
                         <p>Find Flight</p>
                     </div>
                 </div>
                 <div class="logo" id="img-logo">
-                    <img src="Assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
+                    <img src="assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
                 </div>
                 <div class="user-logo">
                     <div class="user-img">
-                        <img src="Assets/Images/Userimage.jpeg" alt="User-logo">
+                        <img src="assets/Images/Userimage.jpeg" alt="User-logo">
                     </div>
                     <div class="user-name">
                         <p>Ediar H.</p>
                     </div>
                     <div class="arrow-down">
-                        <img src="Assets/Images/arrow-down.png" alt="arrow-down">
+                        <img src="assets/Images/arrow-down.png" alt="arrow-down">
                     </div>
                 </div>
 
@@ -58,10 +58,10 @@
                 </div>
                 <div class="plane-accesories">
                     <div class="e-logo">
-                        <img src="Assets/Images/Emirtaes-logo.png" alt="Emirate-logo">
+                        <img src="assets/Images/Emirtaes-logo.png" alt="Emirate-logo">
                     </div>
                     <div class="wifi-logo">
-                        <img src="Assets/Images/Accessories.png" alt="Accessories">
+                        <img src="assets/Images/Accessories.png" alt="Accessories">
                     </div>
                 </div>
                 <div class="plane-arrive">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="plane-direction">
-                        <img src="Assets/Images/Plane-direction.png" alt="plane-direction">
+                        <img src="assets/Images/Plane-direction.png" alt="plane-direction">
                     </div>
                     <div class="newark">
                         <div class="inline">
@@ -92,7 +92,7 @@
                <div class="pricee">
                 <div class="ecoonomyf">
                     <div class="plane-img">
-                        <img src="Assets/Images/big-plane-card.png" alt="plane">
+                        <img src="assets/Images/big-plane-card.png" alt="plane">
                     </div>
                     <div class="economy">
                         <p>Economy</p>
@@ -139,7 +139,7 @@
                         <h1>Add a new Card</h1>
                     </div>
                     <div class="x-img">
-                        <img src="Assets/Images/x-vector.png" alt="x-vector">
+                        <img src="assets/Images/x-vector.png" alt="x-vector">
                     </div>
                 </div>
             <div class="form-container">
@@ -148,7 +148,7 @@
                         <fieldset>
                             <legend> Card Number</legend>
                             <input type="text" id="card-number" name="card-number" placeholder="4321 4321 4321 4321" required>
-                            <img src="Assets/Images/Visa.png" alt="visa">
+                            <img src="assets/Images/Visa.png" alt="visa">
                         </fieldset>
                         
                         
@@ -188,7 +188,7 @@
                         <input type="checkbox" name="checkbox" id="checkbox">
                     <label for="checkbox">Securely save my information for 1-click checkout</label>
                     </div>
-                    <button type="submit"><a href="./ticket.html">Add Card</a></button>
+                    <button type="submit"><a href="ticket.php">Add Card</a></button>
                     <div class="paragraph">
                         <p>By confirming your subscription, you allow The Outdoor Inn Crowd Limited to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription.</p>
                     </div>
@@ -204,10 +204,10 @@
     <div class="footer">
         <div class="lugina-logo">
             <div class="air-img">
-                <img src="Assets/Images/AirLugina-footer.png" alt="Air-Lugina">
+                <img src="assets/Images/AirLugina-footer.png" alt="Air-Lugina">
             </div>
             <div class="social-medias">
-                <img src="Assets/Images/Social-medias.png" alt="Social-Medias">
+                <img src="assets/Images/Social-medias.png" alt="Social-Medias">
             </div>
         </div>
         <div class="our-destinations">

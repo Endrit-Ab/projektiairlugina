@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking details</title>
-    <link rel="stylesheet" href="Assets/booking-details.css">
+    <link rel="stylesheet" href="assets/booking-details.css">
 </head>
 <body>
     <div class="container">
@@ -12,31 +12,31 @@
             <div class="navbar-elements">
                 <div class="flights">
                     <div class="plane-logo">
-                        <img src="Assets/Images/plane.logo.png" alt="small-plane">
+                        <img src="assets/Images/plane.logo.png" alt="small-plane">
                     </div>
                     <div class="flight-name">
                         <p>Find Flight</p>
                     </div>
                 </div>
                 <div class="logo" id="img-logo">
-                    <img src="Assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
+                    <img src="assets/Images/Air-Lugina-Logo.png" alt="AirLugina-logo">
                 </div>
                 <div class="user-logo">
                     <div class="user-img">
-                        <img src="Assets/Images/Userimage.jpeg" alt="User-logo">
+                        <img src="assets/Images/Userimage.jpeg" alt="User-logo">
                     </div>
                     <div class="user-name">
                         <p>Ediar H.</p>
                     </div>
                     <div class="arrow-down">
-                        <img src="Assets/Images/arrow-down.png" alt="arrow-down">
+                        <img src="assets/Images/arrow-down.png" alt="arrow-down">
                     </div>
                 </div>
             </div>
         </div>
         <div class="s-upload">
             <div class="upload">
-                <img src="Assets/Images/upload-vector.png" alt="upload">
+                <img src="assets/Images/upload-vector.png" alt="upload">
                 <p>Upload Flight Logo.</p>
             </div>
         </div>
@@ -88,12 +88,12 @@
                     </fieldset>
                 </div>
                 <div class="upload-images">
-                    <img src="Assets/Images/upload-vector.png" alt="upload">
+                    <img src="assets/Images/upload-vector.png" alt="upload">
                     <p>Upload Images</p> 
                 </div>
                 <button type="submitCreate Account</button>
                 <div class="paragraph">
-                    <p>Already have an account? <span><a href="./login.html">Login</a></span></p>
+                    <p>Already have an account? <span><a href="login.php">Login</a></span></p>
                 </div>
             </form>
         </div>
@@ -102,10 +102,10 @@
     <div class="footer">
         <div class="lugina-logo">
             <div class="air-img">
-                <img src="Assets/Images/AirLugina-footer.png" alt="Air-Lugina">
+                <img src="assets/Images/AirLugina-footer.png" alt="Air-Lugina">
             </div>
             <div class="social-medias">
-                <img src="Assets/Images/Social-medias.png" alt="Social-Medias">
+                <img src="assets/Images/Social-medias.png" alt="Social-Medias">
             </div>
         </div>
         <div class="our-destinations">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking</title>
-    <link rel="stylesheet" href="Assets/booking.css">
+    <link rel="stylesheet" href="assets/booking.css">
 </head>
 <body>
     <div class="container">
@@ -12,25 +12,25 @@
             <div class="navbar-elements">
                 <div class="flights">
                     <div class="plane-logo">    
-                        <img src="Assets/Images/plane.logo.png" alt="small-plane">
+                        <img src="assets/Images/plane.logo.png" alt="small-plane">
                     </div>
                     <div class="flight-name">
                         <p>Find Flight</p>
                     </div>
                 </div>
-                <a href="./landingpage.html" class="logo">
-                <img src="Assets/Images/Air-Lugina-Logo.jpeg" alt="AirLugina-logo">
+                <a href="landingpage.php" class="logo">
+                <img src="assets/Images/Air-Lugina-Logo.jpeg" alt="AirLugina-logo">
                 </a>
 
                 <div class="user-logo">
                     <div class="user-img">
-                        <img src="Assets/Images/Userimage.jpeg" alt="User-logo">
+                        <img src="assets/Images/Userimage.jpeg" alt="User-logo">
                     </div>
                     <div class="user-name">
                         <p>Ediar H.</p>
                     </div>
                     <div class="arrow-down">
-                        <img src="Assets/Images/arrow-down.png" alt="arrow-down">
+                        <img src="assets/Images/arrow-down.png" alt="arrow-down">
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <fieldset>
                         <legend> From - To </legend>
                         <input type="text" id="from-to" name="from-to" placeholder="Preshevë - NewYork" required>
-                        <img src="Assets/Images/swap-vector.png" alt="swap">
+                        <img src="assets/Images/swap-vector.png" alt="swap">
                     </fieldset>
                 </div>
                 <div class="trip">
@@ -68,14 +68,14 @@
                     </fieldset>
                 </div>
                 <div class="search">
-                    <button><img src="Assets/Images/search-vector.png" alt="search"></button>
+                    <button><img src="assets/Images/search-vector.png" alt="search"></button>
                 </div>
-                <button class="ticket-new"><a href="./booking-details.html">Add ticket</a></button>
+                <button class="ticket-new"><a href="booking-details.php">Add ticket</a></button>
             </form>
         </div>
         <div class="emirates">
             <div class="emirate-img">
-                <img src="Assets/Images/emirates.png" alt="emirate">
+                <img src="assets/Images/emirates.png" alt="emirate">
             </div>
             <div class="very-good">
                 <div class="ctn">
@@ -131,7 +131,7 @@
         </div>
         <div class="emirates">
             <div class="emirate-img">
-                <img src="Assets/Images/dubai.png" alt="emirate">
+                <img src="assets/Images/dubai.png" alt="emirate">
             </div>
             <div class="very-good">
                 <div class="ctn">
@@ -187,7 +187,7 @@
         </div>
         <div class="emirates">
             <div class="emirate-img">
-                <img src="Assets/Images/qatar.png" alt="emirate">
+                <img src="assets/Images/qatar.png" alt="emirate">
             </div>
             <div class="very-good">
                 <div class="ctn">
@@ -243,7 +243,7 @@
         </div>
         <div class="emirates">
             <div class="emirate-img">
-                <img src="Assets/Images/etihad.png" alt="emirate">
+                <img src="assets/Images/etihad.png" alt="emirate">
             </div>
             <div class="very-good">
                 <div class="ctn">
@@ -307,10 +307,10 @@
     <div class="footer">
         <div class="lugina-logo">
             <div class="air-img">
-                <img src="Assets/Images/AirLugina-footer.png" alt="Air-Lugina">
+                <img src="assets/Images/AirLugina-footer.png" alt="Air-Lugina">
             </div>
             <div class="social-medias">
-                <img src="Assets/Images/Social-medias.png" alt="Social-Medias">
+                <img src="assets/Images/Social-medias.png" alt="Social-Medias">
             </div>
         </div>
         <div class="our-destinations">
