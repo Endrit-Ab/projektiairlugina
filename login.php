@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require_once 'config/database.php';
 
 $error = '';
@@ -49,12 +50,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 $remembered_email = $_COOKIE['user_email'] ?? '';
+=======
+require_once __DIR__ . '/init.php';
+$auth = new Auth();
+
+if ($auth->isLoggedIn()) {
+    $redirect = $_GET['redirect'] ?? 'index.php';
+    header('Location: ' . $redirect);
+    exit;
+}
+
+$errors = [];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $result = $auth->login($email, $password);
+    if ($result['success']) {
+        $redirect = $_GET['redirect'] ?? 'index.php';
+        header('Location: ' . $redirect);
+        exit;
+    }
+    $errors = $result['errors'];
+}
+>>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Login</title>
     <link rel="stylesheet" href="assets/login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -76,10 +101,24 @@ $remembered_email = $_COOKIE['user_email'] ?? '';
     <div class="container">
         <img class="AirLugina" src="assets/Images/AirLugina.png" alt="">
         <img src="assets/Images/Rectangle_20.png" alt="">
+=======
+    <title>Login - AirLugina</title>
+    <link rel="stylesheet" href="Assets/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <img class="AirLugina" src="Assets/Images/AirLugina.png" alt="">
+        <img src="Assets/Images/Rectangle_20.png" alt="">
+>>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
         <br><br><br><br>
         <h1>Login</h1>
         <p class="p1">Login to access your AirLugina account.</p>
+        <?php if (!empty($errors['login'])): ?>
+            <p class="error-msg"><?= htmlspecialchars($errors['login']) ?></p>
+        <?php endif; ?>
         <div class="table">
+<<<<<<< HEAD
             <?php if ($error): ?>
                 <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
             <?php endif; ?>
@@ -88,17 +127,38 @@ $remembered_email = $_COOKIE['user_email'] ?? '';
                     <fieldset class="fieldset">
                         <legend>Email</legend>
                         <input type="email" name="email" placeholder="name@email.com" value="<?php echo htmlspecialchars($remembered_email); ?>" required>
+=======
+            <form method="post" action="" id="loginForm">
+                <div class="inputbox">
+                    <fieldset class="fieldset">
+                        <legend>Email</legend>
+                        <input type="email" name="email" placeholder="name@email.com" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
+>>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
                     </fieldset>
                 </div>
-                <div class="inputbox"> 
+                <?php if (!empty($errors['email'])): ?>
+                    <p class="field-error"><?= htmlspecialchars($errors['email']) ?></p>
+                <?php endif; ?>
+                <div class="inputbox">
                     <fieldset class="fieldset">
                         <legend>Password</legend>
+<<<<<<< HEAD
                         <input id="passwordField" name="password" type="password" placeholder="password" required>
+=======
+                        <input id="passwordField" type="password" name="password" placeholder="password" required>
+>>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
                         <i id="togglePassword" class='bx bx-hide'></i>
                     </fieldset>
                 </div>
+                <?php if (!empty($errors['password'])): ?>
+                    <p class="field-error"><?= htmlspecialchars($errors['password']) ?></p>
+                <?php endif; ?>
                 <div class="remember">
+<<<<<<< HEAD
                     <label><input type="checkbox" name="remember" <?php echo $remembered_email ? 'checked' : ''; ?>>Remember me</label>
+=======
+                    <label><input type="checkbox" name="remember"> Remember me</label>
+>>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
                     <a href="#">Forgot password?</a>
                 </div>
                 <button type="submit" id="button-submit">Login</button>
@@ -108,8 +168,9 @@ $remembered_email = $_COOKIE['user_email'] ?? '';
                     </p>
                 </div>
             </form>
-         </div>
+        </div>
     </div>
+<<<<<<< HEAD
     <script>
         document.getElementById('togglePassword').addEventListener('click', function() {
             const passwordField = document.getElementById('passwordField');
@@ -119,5 +180,8 @@ $remembered_email = $_COOKIE['user_email'] ?? '';
             this.classList.toggle('bx-show');
         });
     </script>
+=======
+    <script src="Assets/login.js"></script>
+>>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
 </body>
 </html>

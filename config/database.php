@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 // Database Configuration
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
@@ -45,3 +46,14 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 ?>
+=======
+
+
+return [
+    'host'     => 'localhost',
+    'dbname'   => 'airlugina_db',
+    'username' => 'root',
+    'password' => '',
+    'charset'  => 'utf8mb4',
+];
+>>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
