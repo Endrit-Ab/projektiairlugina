@@ -1,11 +1,15 @@
 <?php
-/**
- * Instalim i databazës dhe përdoruesit admin (ekzekuto një herë)
- * Krijon databazën, tabelat dhe admin: admin@airlugina.com / admin123
- */
-require_once __DIR__ . '/init.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$config = Database::getConfig();
+$config = [
+    'host' => 'localhost',
+    'dbname' => 'airlugina_db',
+    'username' => 'root',
+    'password' => '',
+    'charset' => 'utf8mb4'
+];
+
 try {
     $pdo = new PDO(
         'mysql:host=' . $config['host'] . ';charset=' . $config['charset'],
@@ -13,35 +17,102 @@ try {
         $config['password'],
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
-} catch (PDOException $e) {
-    die('Lidhja me MySQL dështoi. Kontrollo config/database.php: ' . $e->getMessage());
-}
-$pdo->exec('CREATE DATABASE IF NOT EXISTS `' . $config['dbname'] . '`');
-$pdo->exec('USE `' . $config['dbname'] . '`');
-
-$sql = file_get_contents(__DIR__ . '/database/schema.sql');
-$sql = preg_replace('/--.*$/m', '', $sql);
-$statements = array_filter(array_map('trim', explode(';', $sql)));
-foreach ($statements as $stmt) {
-    if ($stmt !== '' && stripos($stmt, 'INSERT INTO') === false) {
-        try {
-            $pdo->exec($stmt);
-        } catch (PDOException $e) {
-            // Tabela mund të ekzistojë
-            if (strpos($e->getMessage(), 'already exists') === false) {
-                throw $e;
-            }
-        }
+    
+    $pdo->exec('CREATE DATABASE IF NOT EXISTS `' . $config['dbname'] . '` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
+    $pdo->exec('USE `' . $config['dbname'] . '`');
+    
+    $pdo->exec("CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        password_hash VARCHAR(255) NOT NULL,
+        first_name VARCHAR(50) NOT NULL,
+        last_name VARCHAR(50) NOT NULL,
+        role ENUM('user', 'admin') DEFAULT 'user',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )");
+    
+    $pdo->exec("CREATE TABLE IF NOT EXISTS news (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        slug VARCHAR(255) NOT NULL UNIQUE,
+        content TEXT,
+        image_path VARCHAR(255),
+        pdf_path VARCHAR(255),
+        created_by INT,
+        updated_by INT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )");
+    
+    $pdo->exec("CREATE TABLE IF NOT EXISTS products (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        description TEXT,
+        from_location VARCHAR(100),
+        to_location VARCHAR(100),
+        price DECIMAL(10,2),
+        image_path VARCHAR(255),
+        pdf_path VARCHAR(255),
+        created_by INT,
+        updated_by INT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )");
+    
+    $pdo->exec("CREATE TABLE IF NOT EXISTS contact_messages (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        subject VARCHAR(255) NOT NULL,
+        message TEXT NOT NULL,
+        read_at TIMESTAMP NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )");
+    
+    $pdo->exec("CREATE TABLE IF NOT EXISTS pages (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        slug VARCHAR(100) NOT NULL UNIQUE,
+        title VARCHAR(255) NOT NULL,
+        content TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )");
+    
+    $pdo->exec("CREATE TABLE IF NOT EXISTS slider (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(255),
+        subtitle VARCHAR(255),
+        image_path VARCHAR(255),
+        sort_order INT DEFAULT 0,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )");
+    
+    $stmt = $pdo->query("SELECT COUNT(*) FROM users WHERE email = 'admin@airlugina.com'");
+    if ($stmt->fetchColumn() == 0) {
+        $hash = password_hash('admin123', PASSWORD_DEFAULT);
+        $pdo->prepare("INSERT INTO users (email, password_hash, first_name, last_name, role) VALUES (?, ?, ?, ?, ?)")
+            ->execute(['admin@airlugina.com', $hash, 'Admin', 'User', 'admin']);
     }
-}
-// Insert pages dhe slider nga schema (nëse nuk ekzistojnë)
-$pdo->exec("INSERT IGNORE INTO pages (slug, title, content) VALUES ('about', 'About Us', 'AirLugina helps you live and travel. We offer special deals to suit your plan.'), ('home', 'Live & Travel', 'Helping others LIVE & TRAVEL. Special offers to suit your plan.')");
-$pdo->exec("INSERT IGNORE INTO slider (title, subtitle, image_path, sort_order) VALUES ('Helping Others', 'LIVE & TRAVEL', 'Assets/Images/backroung.png', 0)");
-
-$user = new User();
-if (!$user->findByEmail('admin@airlugina.com')) {
-    $user->create('admin@airlugina.com', 'admin123', 'Admin', 'AirLugina', 'admin');
-    echo 'Instalimi përfundoi. Admin: admin@airlugina.com / admin123';
-} else {
-    echo 'Databaza ekziston. Admin tashmë është i regjistruar (admin@airlugina.com / admin123).';
+    
+    $stmt = $pdo->query("SELECT COUNT(*) FROM pages");
+    if ($stmt->fetchColumn() == 0) {
+        $pdo->exec("INSERT INTO pages (slug, title, content) VALUES 
+            ('home', 'Welcome to AirLugina', 'Special offers to suit your plan. Live & Travel with us.'),
+            ('about', 'About AirLugina', 'AirLugina is your trusted partner for flights and travel.')");
+    }
+    
+    $stmt = $pdo->query("SELECT COUNT(*) FROM slider");
+    if ($stmt->fetchColumn() == 0) {
+        $pdo->exec("INSERT INTO slider (title, subtitle, image_path, sort_order) VALUES 
+            ('Helping Others', 'LIVE & TRAVEL', 'assets/Images/backroung.png', 1),
+            ('Explore the World', 'Best Flight Deals', 'assets/Images/dubai.png', 2)");
+    }
+    
+    echo '<h1>Instalimi perfundoi me sukses!</h1>';
+    echo '<p><strong>Admin:</strong> admin@airlugina.com</p>';
+    echo '<p><strong>Password:</strong> admin123</p>';
+    echo '<p><a href="index.php">Shko te faqja kryesore</a></p>';
+    
+} catch (PDOException $e) {
+    die('Gabim: ' . $e->getMessage());
 }

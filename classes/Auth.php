@@ -1,12 +1,7 @@
 <?php
-/**
- * Auth - autentifikim dhe sesion (OOP)
- * AirLugina Faza 2
- */
-
 class Auth
 {
-    private User $user;
+    private $user;
 
     public function __construct()
     {
@@ -16,14 +11,14 @@ class Auth
         }
     }
 
-    public function login(string $email, string $password): array
+    public function login($email, $password)
     {
         $errors = [];
         if (empty(trim($email))) {
-            $errors['email'] = 'Email-i është i detyrueshëm.';
+            $errors['email'] = 'Email-i eshte i detyrueshm.';
         }
         if (empty($password)) {
-            $errors['password'] = 'Fjalëkalimi është i detyrueshëm.';
+            $errors['password'] = 'Fjalekalimi eshte i detyrueshm.';
         }
         if (!empty($errors)) {
             return ['success' => false, 'errors' => $errors];
@@ -31,7 +26,7 @@ class Auth
 
         $u = $this->user->findByEmail(trim($email));
         if (!$u || !$this->user->verifyPassword($password, $u['password_hash'])) {
-            $errors['login'] = 'Email ose fjalëkalim i gabuar.';
+            $errors['login'] = 'Email ose fjalekalim i gabuar.';
             return ['success' => false, 'errors' => $errors];
         }
 
@@ -42,7 +37,7 @@ class Auth
         return ['success' => true, 'user' => $u];
     }
 
-    public function register(array $data): array
+    public function register($data)
     {
         $errors = $this->validateRegister($data);
         if (!empty($errors)) {
@@ -51,7 +46,7 @@ class Auth
 
         $email = trim($data['email']);
         if ($this->user->emailExists($email)) {
-            $errors['email'] = 'Ky email është i regjistruar tashmë.';
+            $errors['email'] = 'Ky email eshte i regjistruar tashme.';
             return ['success' => false, 'errors' => $errors];
         }
 
@@ -65,31 +60,31 @@ class Auth
         return ['success' => true];
     }
 
-    private function validateRegister(array $data): array
+    private function validateRegister($data)
     {
         $errors = [];
         if (empty(trim($data['first_name'] ?? ''))) {
-            $errors['first_name'] = 'Emri është i detyrueshëm.';
+            $errors['first_name'] = 'Emri eshte i detyrueshm.';
         }
         if (empty(trim($data['last_name'] ?? ''))) {
-            $errors['last_name'] = 'Mbiemri është i detyrueshëm.';
+            $errors['last_name'] = 'Mbiemri eshte i detyrueshm.';
         }
         if (empty(trim($data['email'] ?? ''))) {
-            $errors['email'] = 'Email-i është i detyrueshëm.';
+            $errors['email'] = 'Email-i eshte i detyrueshm.';
         } elseif (!filter_var(trim($data['email'] ?? ''), FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Email-i nuk është i vlefshëm.';
+            $errors['email'] = 'Email-i nuk eshte i vlefshem.';
         }
         $pass = $data['password'] ?? '';
         if (strlen($pass) < 6) {
-            $errors['password'] = 'Fjalëkalimi duhet të ketë të paktën 6 karaktere.';
+            $errors['password'] = 'Fjalekalimi duhet te kete te pakten 6 karaktere.';
         }
         if (($data['password_confirm'] ?? '') !== $pass) {
-            $errors['password_confirm'] = 'Fjalëkalimet nuk përputhen.';
+            $errors['password_confirm'] = 'Fjalekalimi nuk perputhen.';
         }
         return $errors;
     }
 
-    public function logout(): void
+    public function logout()
     {
         $_SESSION = [];
         if (ini_get('session.use_cookies')) {
@@ -99,44 +94,50 @@ class Auth
         session_destroy();
     }
 
-    public function isLoggedIn(): bool
+    public function isLoggedIn()
     {
         return !empty($_SESSION['user_id']);
     }
 
-    public function isAdmin(): bool
+    public function isAdmin()
     {
         return ($_SESSION['user_role'] ?? '') === 'admin';
     }
 
-    public function requireLogin(string $redirectTo = 'login.php'): void
+    public function requireLogin($redirectTo = 'login.php')
     {
         if (!$this->isLoggedIn()) {
-            header('Location: ' . $redirectTo . '?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+            $prefix = (defined('IS_ADMIN') && IS_ADMIN) ? '../' : '';
+            $url = $prefix . $redirectTo;
+            if ($redirectTo === 'login.php' && $prefix === '../') {
+                $url .= '?redirect=' . urlencode('admin/dashboard.php');
+            }
+            header('Location: ' . $url);
             exit;
         }
     }
 
-    public function requireAdmin(string $redirectTo = 'index.php'): void
+    public function requireAdmin($redirectTo = 'index.php')
     {
+        $prefix = (defined('IS_ADMIN') && IS_ADMIN) ? '../' : '';
         $this->requireLogin('login.php');
         if (!$this->isAdmin()) {
-            header('Location: ' . $redirectTo);
+            header('Location: ' . $prefix . $redirectTo);
             exit;
         }
     }
 
-    public function userId(): ?int
+    public function userId()
     {
         return isset($_SESSION['user_id']) ? (int) $_SESSION['user_id'] : null;
     }
 
-    public function userRole(): ?string
+    public function userRole()
     {
         return $_SESSION['user_role'] ?? null;
     }
 
-    public function userName(): string
+    public function userName()
     {
         return $_SESSION['user_name'] ?? 'Guest';
     }

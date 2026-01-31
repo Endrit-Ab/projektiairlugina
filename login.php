@@ -1,187 +1,88 @@
 <?php
-<<<<<<< HEAD
-require_once 'config/database.php';
-
-$error = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = trim($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
-    $remember = isset($_POST['remember']);
-    
-    
-    if (empty($email) || empty($password)) {
-        $error = 'Please fill in all fields.';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = 'Please enter a valid email address.';
-    } else {
-        
-        $stmt = $conn->prepare("SELECT id, first_name, last_name, email, password FROM users WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-        if ($result->num_rows === 1) {
-            $user = $result->fetch_assoc();
-            
-            if (password_verify($password, $user['password'])) {
-              
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['user_email'] = $user['email'];
-                $_SESSION['user_name'] = $user['first_name'] . ' ' . $user['last_name'];
-                
-               
-                if ($remember) {
-                    setcookie('user_email', $email, time() + (86400 * 30), "/"); 
-                }
-                
-            
-                header("Location: landingpage.php");
-                exit();
-            } else {
-                $error = 'Invalid email or password.';
-            }
-        } else {
-            $error = 'Invalid email or password.';
-        }
-        $stmt->close();
-    }
-}
-
-
-$remembered_email = $_COOKIE['user_email'] ?? '';
-=======
 require_once __DIR__ . '/init.php';
 $auth = new Auth();
 
-if ($auth->isLoggedIn()) {
-    $redirect = $_GET['redirect'] ?? 'index.php';
-    header('Location: ' . $redirect);
-    exit;
-}
-
 $errors = [];
+$old = [];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
-    $result = $auth->login($email, $password);
+    $result = $auth->login($_POST['email'] ?? '', $_POST['password'] ?? '');
     if ($result['success']) {
-        $redirect = $_GET['redirect'] ?? 'index.php';
+        $redirect = $_POST['redirect'] ?? $_GET['redirect'] ?? 'index.php';
+        if ($redirect === '' || strpos($redirect, '..') !== false) $redirect = 'index.php';
         header('Location: ' . $redirect);
         exit;
     }
     $errors = $result['errors'];
+    $old = $_POST;
 }
->>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
+$redirectParam = isset($_GET['redirect']) ? htmlspecialchars($_GET['redirect']) : 'index.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Login</title>
+    <title>Login - AirLugina</title>
     <link rel="stylesheet" href="assets/login.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        .alert {
-            padding: 10px 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .alert-error {
-            background-color: #ffe6e6;
-            color: #cc0000;
-            border: 1px solid #cc0000;
-        }
-    </style>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>.field-error{color:red;font-size:0.85rem;display:block;margin-top:4px}</style>
 </head>
 <body>
     <div class="container">
         <img class="AirLugina" src="assets/Images/AirLugina.png" alt="">
         <img src="assets/Images/Rectangle_20.png" alt="">
-=======
-    <title>Login - AirLugina</title>
-    <link rel="stylesheet" href="Assets/login.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    <div class="container">
-        <img class="AirLugina" src="Assets/Images/AirLugina.png" alt="">
-        <img src="Assets/Images/Rectangle_20.png" alt="">
->>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
         <br><br><br><br>
         <h1>Login</h1>
         <p class="p1">Login to access your AirLugina account.</p>
-        <?php if (!empty($errors['login'])): ?>
-            <p class="error-msg"><?= htmlspecialchars($errors['login']) ?></p>
-        <?php endif; ?>
         <div class="table">
-<<<<<<< HEAD
-            <?php if ($error): ?>
-                <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
+            <?php if (!empty($errors['login'])): ?>
+                <p class="field-error"><?= htmlspecialchars($errors['login']) ?></p>
             <?php endif; ?>
-            <form method="POST" action="">
-                <div class="inputbox"> 
-                    <fieldset class="fieldset">
-                        <legend>Email</legend>
-                        <input type="email" name="email" placeholder="name@email.com" value="<?php echo htmlspecialchars($remembered_email); ?>" required>
-=======
-            <form method="post" action="" id="loginForm">
+            <form method="POST" action="" id="loginForm">
+                <input type="hidden" name="redirect" value="<?= $redirectParam ?>">
                 <div class="inputbox">
                     <fieldset class="fieldset">
                         <legend>Email</legend>
-                        <input type="email" name="email" placeholder="name@email.com" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
->>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
+                        <input type="email" name="email" placeholder="name@email.com" value="<?= htmlspecialchars($old['email'] ?? '') ?>" required>
                     </fieldset>
+                    <?php if (!empty($errors['email'])): ?>
+                        <span class="field-error"><?= htmlspecialchars($errors['email']) ?></span>
+                    <?php endif; ?>
                 </div>
-                <?php if (!empty($errors['email'])): ?>
-                    <p class="field-error"><?= htmlspecialchars($errors['email']) ?></p>
-                <?php endif; ?>
                 <div class="inputbox">
                     <fieldset class="fieldset">
                         <legend>Password</legend>
-<<<<<<< HEAD
                         <input id="passwordField" name="password" type="password" placeholder="password" required>
-=======
-                        <input id="passwordField" type="password" name="password" placeholder="password" required>
->>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
-                        <i id="togglePassword" class='bx bx-hide'></i>
+                        <i id="togglePassword" class="bx bx-hide"></i>
                     </fieldset>
+                    <?php if (!empty($errors['password'])): ?>
+                        <span class="field-error"><?= htmlspecialchars($errors['password']) ?></span>
+                    <?php endif; ?>
                 </div>
-                <?php if (!empty($errors['password'])): ?>
-                    <p class="field-error"><?= htmlspecialchars($errors['password']) ?></p>
-                <?php endif; ?>
                 <div class="remember">
-<<<<<<< HEAD
-                    <label><input type="checkbox" name="remember" <?php echo $remembered_email ? 'checked' : ''; ?>>Remember me</label>
-=======
-                    <label><input type="checkbox" name="remember"> Remember me</label>
->>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
-                    <a href="#">Forgot password?</a>
+                    <label><input type="checkbox" name="remember">Remember me</label>
                 </div>
                 <button type="submit" id="button-submit">Login</button>
                 <div class="register">
-                    <p>Don't have an account?
-                        <a href="signup.php">Register</a>
-                    </p>
+                    <p>Don't have an account? <a href="signup.php">Register</a></p>
                 </div>
             </form>
         </div>
     </div>
-<<<<<<< HEAD
     <script>
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            const passwordField = document.getElementById('passwordField');
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-            this.classList.toggle('bx-hide');
-            this.classList.toggle('bx-show');
-        });
+    document.getElementById('togglePassword').addEventListener('click', function() {
+        var f = document.getElementById('passwordField');
+        f.type = f.type === 'password' ? 'text' : 'password';
+        this.classList.toggle('bx-hide');
+        this.classList.toggle('bx-show');
+    });
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        var email = document.querySelector('input[name="email"]').value.trim();
+        var pass = document.getElementById('passwordField').value;
+        if (!email) { e.preventDefault(); alert('Email-i është i detyrueshëm.'); return; }
+        if (!pass) { e.preventDefault(); alert('Fjalëkalimi është i detyrueshëm.'); return; }
+    });
     </script>
-=======
-    <script src="Assets/login.js"></script>
->>>>>>> 5b46a16e0c24470fe3f79b33b169e80e11f47477
 </body>
 </html>

@@ -2,10 +2,10 @@
         <div class="footer">
             <div class="lugina-logo">
                 <div class="air-img">
-                    <img src="Assets/Images/AirLugina.png" alt="Air-Lugina">
+                    <img src="assets/Images/AirLugina.png" alt="Air-Lugina">
                 </div>
                 <div class="social-medias">
-                    <img src="Assets/Images/Social-medias.png" alt="Social-Medias">
+                    <img src="assets/Images/Social-medias.png" alt="Social-Medias">
                 </div>
             </div>
             <div class="our-destinations">

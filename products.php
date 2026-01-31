@@ -14,7 +14,7 @@ require __DIR__ . '/includes/header.php';
 <div class="content-wrap" style="max-width: 1100px; margin: 2rem auto; padding: 1rem;">
   <h1>Produkte / Flights</h1>
   <?php if (empty($products)): ?>
-    <p>Nuk ka produkte të regjistruara ende. Administratori mund të shtojë nga Dashboard. <a href="deals.php">Shiko faqen Deals</a>.</p>
+    <p>Nuk ka produkte te regjistruara ende. Administratori mund te shtoje nga Dashboard. <a href="deals.php">Shiko faqen Deals</a>.</p>
   <?php else: ?>
     <div class="cards" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
       <?php foreach ($products as $p): ?>
@@ -22,7 +22,7 @@ require __DIR__ . '/includes/header.php';
           <?php if (!empty($p['image_path'])): ?>
             <img src="<?= htmlspecialchars($p['image_path']) ?>" alt="<?= htmlspecialchars($p['title']) ?>" class="card-image" style="width: 100%; height: 180px; object-fit: cover;">
           <?php else: ?>
-            <img src="Assets/Images/Frame 197-1.png" alt="" class="card-image" style="width: 100%; height: 180px; object-fit: cover;">
+            <img src="assets/Images/Frame 197-1.png" alt="" class="card-image" style="width: 100%; height: 180px; object-fit: cover;">
           <?php endif; ?>
           <div class="card-content" style="padding: 1rem;">
             <h3 class="card-title"><?= htmlspecialchars($p['title']) ?></h3>

@@ -1,47 +1,42 @@
 <?php
-/**
- * Validator - validim backend (OOP)
- * AirLugina Faza 2
- */
-
 class Validator
 {
-    public static function email(?string $value): bool
+    public static function email($value)
     {
         return $value !== null && filter_var(trim($value), FILTER_VALIDATE_EMAIL) !== false;
     }
 
-    public static function required(?string $value): bool
+    public static function required($value)
     {
         return $value !== null && trim($value) !== '';
     }
 
-    public static function minLength(?string $value, int $min): bool
+    public static function minLength($value, $min)
     {
         return $value !== null && strlen($value) >= $min;
     }
 
-    public static function maxLength(?string $value, int $max): bool
+    public static function maxLength($value, $max)
     {
         return $value === null || strlen($value) <= $max;
     }
 
-    public static function contact(array $data): array
+    public static function contact($data)
     {
         $errors = [];
         if (!self::required($data['name'] ?? null)) {
-            $errors['name'] = 'Emri është i detyrueshëm.';
+            $errors['name'] = 'Emri eshte i detyrueshm.';
         }
         if (!self::required($data['email'] ?? null)) {
-            $errors['email'] = 'Email-i është i detyrueshëm.';
+            $errors['email'] = 'Email-i eshte i detyrueshm.';
         } elseif (!self::email($data['email'] ?? null)) {
-            $errors['email'] = 'Email-i nuk është i vlefshëm.';
+            $errors['email'] = 'Email-i nuk eshte i vlefshem.';
         }
         if (!self::required($data['subject'] ?? null)) {
-            $errors['subject'] = 'Subjekti është i detyrueshëm.';
+            $errors['subject'] = 'Subjekti eshte i detyrueshm.';
         }
         if (!self::required($data['message'] ?? null)) {
-            $errors['message'] = 'Mesazhi është i detyrueshëm.';
+            $errors['message'] = 'Mesazhi eshte i detyrueshm.';
         }
         return $errors;
     }

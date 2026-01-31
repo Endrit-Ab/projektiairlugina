@@ -11,7 +11,7 @@ $pageTitle = $pageTitle ?? 'AirLugina';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($pageTitle) ?> - AirLugina</title>
-    <link rel="stylesheet" href="Assets/landingpage.css">
+    <link rel="stylesheet" href="assets/landingpage.css">
     <style>.nav-links{display:flex;gap:1rem;justify-content:center;padding:0.75rem;background:#f5f5f5;flex-wrap:wrap}.nav-links a{color:#333;text-decoration:none}.nav-links a:hover{text-decoration:underline}.user-name-nav{margin-right:0.5rem;align-self:center}</style>
 </head>
 <body>
@@ -19,11 +19,11 @@ $pageTitle = $pageTitle ?? 'AirLugina';
         <div class="hero-overlay">
             <nav class="navbar">
                 <div style="display: flex;" class="left-nav">
-                    <img style="margin-right: 5px;" src="Assets/Images/logo.png" alt="">
+                    <img style="margin-right: 5px;" src="assets/Images/logo.png" alt="">
                     <a href="index.php">Find Flight</a>
                 </div>
                 <div class="logo">
-                    <span><img src="Assets/Images/AirLuginaBARDH.png" alt=""></span>
+                    <span><img src="assets/Images/AirLuginaBARDH.png" alt=""></span>
                 </div>
                 <div class="buttons">
                     <?php if ($auth->isLoggedIn()): ?>

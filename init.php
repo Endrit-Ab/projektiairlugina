@@ -1,13 +1,9 @@
 <?php
-/**
- * Bootstrap - ngarkon klasat dhe konfigurimin (OOP)
- * Përdor: require_once __DIR__ . '/init.php'; ose require_once 'init.php';
- */
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('ROOT_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-define('BASE_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
+$script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME']);
+define('IS_ADMIN', (strpos($script, '/admin/') !== false));
 
 require_once __DIR__ . '/classes/Database.php';
 require_once __DIR__ . '/classes/User.php';

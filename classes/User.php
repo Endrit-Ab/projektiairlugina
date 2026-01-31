@@ -1,21 +1,14 @@
 <?php
-/**
- * Modeli User - përdoruesit (OOP)
- * AirLugina Faza 2
- */
-
-use PDO;
-
 class User
 {
-    private PDO $db;
+    private $db;
 
     public function __construct()
     {
         $this->db = Database::getConnection();
     }
 
-    public function create(string $email, string $password, string $firstName, string $lastName, string $role = 'user'): int
+    public function create($email, $password, $firstName, $lastName, $role = 'user')
     {
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $sql = 'INSERT INTO users (email, password_hash, first_name, last_name, role) VALUES (?, ?, ?, ?, ?)';
@@ -24,7 +17,7 @@ class User
         return (int) $this->db->lastInsertId();
     }
 
-    public function findByEmail(string $email): ?array
+    public function findByEmail($email)
     {
         $sql = 'SELECT id, email, password_hash, first_name, last_name, role, created_at FROM users WHERE email = ? LIMIT 1';
         $stmt = $this->db->prepare($sql);
@@ -33,7 +26,7 @@ class User
         return $row ?: null;
     }
 
-    public function findById(int $id): ?array
+    public function findById($id)
     {
         $sql = 'SELECT id, email, first_name, last_name, role, created_at FROM users WHERE id = ? LIMIT 1';
         $stmt = $this->db->prepare($sql);
@@ -42,12 +35,12 @@ class User
         return $row ?: null;
     }
 
-    public function verifyPassword(string $plain, string $hash): bool
+    public function verifyPassword($plain, $hash)
     {
         return password_verify($plain, $hash);
     }
 
-    public function emailExists(string $email, ?int $excludeId = null): bool
+    public function emailExists($email, $excludeId = null)
     {
         $sql = 'SELECT 1 FROM users WHERE email = ?';
         $params = [$email];

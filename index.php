@@ -21,7 +21,7 @@ if (!empty($sliderItems)) {
 require __DIR__ . '/includes/header.php';
 ?>
       <div class="form-container">
-        <div><h2 style="font-size: 1em; display: flex; align-items: center;"><img src="Assets/Images/airplanee.png" alt="icon" style="padding-right: 6px;"> Flights</h2></div>
+        <div><h2 style="font-size: 1em; display: flex; align-items: center;"><img src="assets/Images/airplanee.png" alt="icon" style="padding-right: 6px;"> Flights</h2></div>
         <form action="products.php" method="get">
           <div class="form-group">
             <div>
@@ -119,7 +119,7 @@ require __DIR__ . '/includes/header.php';
                 <?php if (!empty($p['image_path'])): ?>
                   <img src="<?= htmlspecialchars($p['image_path']) ?>" alt="<?= htmlspecialchars($p['title']) ?>" class="card-image">
                 <?php else: ?>
-                  <img src="Assets/Images/Frame 197-1.png" alt="Card Image" class="card-image">
+                  <img src="assets/Images/Frame 197-1.png" alt="Card Image" class="card-image">
                 <?php endif; ?>
                 <div class="card-content">
                   <h3 class="card-title"><?= htmlspecialchars($p['title']) ?></h3>
@@ -130,21 +130,21 @@ require __DIR__ . '/includes/header.php';
             <?php endforeach; ?>
           <?php else: ?>
             <div class="card">
-              <img src="Assets/Images/Frame 197-1.png" alt="Istanbul" class="card-image">
+              <img src="assets/Images/Frame 197-1.png" alt="Istanbul" class="card-image">
               <div class="card-content">
                 <h3 class="card-title">Istanbul, Turkey</h3>
                 <p class="card-text">Flights • Hotels • Resorts</p>
               </div>
             </div>
             <div class="card">
-              <img src="Assets/Images/Frame 197-2.png" alt="Sydney" class="card-image">
+              <img src="assets/Images/Frame 197-2.png" alt="Sydney" class="card-image">
               <div class="card-content">
                 <h3 class="card-title">Sydney, Australia</h3>
                 <p class="card-text">Flights • Hotels • Resorts</p>
               </div>
             </div>
             <div class="card">
-              <img src="Assets/Images/Frame 197.png" alt="Baku" class="card-image">
+              <img src="assets/Images/Frame 197.png" alt="Baku" class="card-image">
               <div class="card-content">
                 <h3 class="card-title">Baku, Azerbaijan</h3>
                 <p class="card-text">Flights • Hotels • Resorts</p>

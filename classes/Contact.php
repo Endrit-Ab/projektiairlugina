@@ -1,21 +1,14 @@
 <?php
-/**
- * Modeli Contact - mesazhe kontakti dhe faqe (OOP)
- * AirLugina Faza 2
- */
-
-use PDO;
-
 class Contact
 {
-    private PDO $db;
+    private $db;
 
     public function __construct()
     {
         $this->db = Database::getConnection();
     }
 
-    public function saveMessage(string $name, string $email, string $subject, string $message): int
+    public function saveMessage($name, $email, $subject, $message)
     {
         $sql = 'INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)';
         $stmt = $this->db->prepare($sql);
@@ -23,7 +16,7 @@ class Contact
         return (int) $this->db->lastInsertId();
     }
 
-    public function getAllMessages(bool $unreadOnly = false): array
+    public function getAllMessages($unreadOnly = false)
     {
         $sql = 'SELECT * FROM contact_messages';
         if ($unreadOnly) {
@@ -34,7 +27,7 @@ class Contact
         return $stmt->fetchAll();
     }
 
-    public function getMessageById(int $id): ?array
+    public function getMessageById($id)
     {
         $stmt = $this->db->prepare('SELECT * FROM contact_messages WHERE id = ? LIMIT 1');
         $stmt->execute([$id]);
@@ -42,13 +35,13 @@ class Contact
         return $row ?: null;
     }
 
-    public function markAsRead(int $id): bool
+    public function markAsRead($id)
     {
         $stmt = $this->db->prepare('UPDATE contact_messages SET read_at = NOW() WHERE id = ?');
         return $stmt->execute([$id]);
     }
 
-    public function getPageBySlug(string $slug): ?array
+    public function getPageBySlug($slug)
     {
         $stmt = $this->db->prepare('SELECT * FROM pages WHERE slug = ? LIMIT 1');
         $stmt->execute([$slug]);
@@ -56,7 +49,7 @@ class Contact
         return $row ?: null;
     }
 
-    public function getSliderItems(): array
+    public function getSliderItems()
     {
         $stmt = $this->db->query('SELECT * FROM slider ORDER BY sort_order ASC, id ASC');
         return $stmt->fetchAll();
