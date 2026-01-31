@@ -6,7 +6,7 @@ $contactModel = new Contact();
 $pageContent = $contactModel->getPageBySlug('about');
 $sliderItems = $contactModel->getSliderItems();
 
-$pageTitle = 'About Us';
+$pageTitle = 'About AirLugina';
 $heroSubtitle = 'About Us';
 $heroTitle = $pageContent['title'] ?? 'About AirLugina';
 $heroDesc = strip_tags(mb_substr($pageContent['content'] ?? '', 0, 120)) . '...';
