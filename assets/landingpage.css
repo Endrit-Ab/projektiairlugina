@@ -270,7 +270,7 @@
  .cardd{
   width: 600px;
   height: 530px;
-  color: white;
+  color: rgba(255, 255, 255, 0.966);
   background-image: url(/assets/Images/backkk.png);
   border-radius: 20px;
   display: flex;
