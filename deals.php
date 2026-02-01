@@ -290,7 +290,7 @@
                     
                 </div>
                 <div class="details-btn">
-                    <button><a href="arrives.php">View Deals</a></button>unpeshoh bash mir 
+                    <button><a href="arrives.php">View Deals</a></button>
                 </div>
             </div>
         </div>
