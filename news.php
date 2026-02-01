@@ -14,7 +14,7 @@ require __DIR__ . '/includes/header.php';
 <div class="content-wrap" style="max-width: 1000px; margin: 2rem auto; padding: 1rem;">
   <h1>Lajme</h1>
   <?php if (empty($newsList)): ?>
-    <p>Nuk ka lajme të regjistruara ende. Administratori mund të shtojë lajme nga Dashboard.</p>
+    <p>Nuk ka lajme të regjistruara ende Administratori mund të shtojë lajme nga Dashboard.</p>
   <?php else: ?>
     <ul style="list-style: none; padding: 0;">
       <?php foreach ($newsList as $n): ?>
