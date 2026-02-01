@@ -90,7 +90,7 @@
             <div class="date">
                 <div class="return-date">
                     <div class="wed">
-                        <h4>Return Mon, Dec 13</h4>
+                        <h4>Depart Wed, Dec 8</h4>
                     </div>
                     <div class="wed">
                         <h4>3h 30min</h4>
