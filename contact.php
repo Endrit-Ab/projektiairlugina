@@ -31,7 +31,7 @@ require __DIR__ . '/includes/header.php';
 <div class="content-wrap" style="max-width: 600px; margin: 2rem auto; padding: 1rem;">
   <h1>Contact Us</h1>
   <?php if ($success): ?>
-    <p class="success-msg" style="color: green;">Mesazhi u dërgua. Do të ju përgjigjemi sa më shpejt.</p>
+    <p class="success-msg" style="color: green;">Mesazhi u dërgua. Do të ju përgjigjemi sa më shpejt!</p>
   <?php endif; ?>
   <form method="post" action="" id="contactForm">
     <div style="margin-bottom: 1rem;">

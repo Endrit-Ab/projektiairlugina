@@ -146,7 +146,7 @@
                 <form action="#">
                     <div class="c-number">
                         <fieldset>
-                            <legend> Card Number</legend>
+                            <legend>Card Number</legend>
                             <input type="text" id="card-number" name="card-number" placeholder="4321 4321 4321 4321" required>
                             <img src="assets/Images/Visa.png" alt="visa">
                         </fieldset>

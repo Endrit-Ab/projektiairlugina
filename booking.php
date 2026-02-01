@@ -145,7 +145,7 @@
                     </div>
                     <div class="second-ctn">
                         <div class="p">
-                            <p>starting from</p>
+                            <p>Starting from</p>
                         </div>
                         <div class="price">
                             <p>$110</p>
@@ -201,7 +201,7 @@
                     </div>
                     <div class="second-ctn">
                         <div class="p">
-                            <p>starting from</p>
+                            <p>Starting from</p>
                         </div>
                         <div class="price">
                             <p>$125</p>
