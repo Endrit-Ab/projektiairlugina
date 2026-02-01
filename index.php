@@ -27,6 +27,8 @@ require __DIR__ . '/includes/header.php';
             <div>
               <label for="from">From</label>
               <select id="from" name="from">
+                <option value="Tirana">Tirana</option>
+                <option value="Skopje">Skopje</option>
                 <option value="Preshevë">Preshevë</option>
                 <option value="Prishtinë">Prishtinë</option>
                 <option value="Istanbul">Istanbul</option>
@@ -36,6 +38,10 @@ require __DIR__ . '/includes/header.php';
             <div>
               <label for="to">To</label>
               <select id="to" name="to">
+                <option value="Milan">Milan</option>
+                <option value="Roma">Roma</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Doha">Doha</option>
                 <option value="Prishtinë">Prishtinë</option>
                 <option value="Preshevë">Preshevë</option>
                 <option value="Istanbul">Istanbul</option>

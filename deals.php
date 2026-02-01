@@ -93,7 +93,7 @@
                             <p>starting from</p>
                         </div>
                         <div class="price">
-                            <p>$104</p>
+                            <p>€399</p>
                         </div>
                     </div>
                 </div>
@@ -105,8 +105,8 @@
                     </div>
                     <p class="pad">non stop</p>
                     <div class="EWR">
-                        <p><span>2h28m</span></p>
-                        <p>EWR-BNA</p>
+                        <p><span>3h 30m</span></p>
+                        <p>TIA-DXB</p>
                     </div>
                 </div>
                 <div class="nonstop-2">
@@ -117,8 +117,8 @@
                     </div>
                     <p class="pad">non stop</p>
                     <div class="EWR">
-                        <p><span>2h28m</span></p>
-                        <p>EWR-BNA</p>
+                        <p><span>3h 30m</span></p>
+                        <p>TIA-DXB</p>
                     </div>
                 </div>
                 <div class="bord">

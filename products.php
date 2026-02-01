@@ -11,6 +11,16 @@ $heroDesc = 'Zgjidhni fluturimet dhe ofertat tona.';
 
 require __DIR__ . '/includes/header.php';
 ?>
+<style>
+.content-wrap .product-card .card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+</style>
 <div class="content-wrap" style="max-width: 1100px; margin: 2rem auto; padding: 1rem;">
   <h1>Produkte / Flights</h1>
   <?php if (empty($products)): ?>
@@ -18,11 +28,11 @@ require __DIR__ . '/includes/header.php';
   <?php else: ?>
     <div class="cards" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
       <?php foreach ($products as $p): ?>
-        <div class="card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+        <div class="card product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s;" onclick="window.location='deals.php'">
           <?php if (!empty($p['image_path'])): ?>
-            <img src="<?= htmlspecialchars($p['image_path']) ?>" alt="<?= htmlspecialchars($p['title']) ?>" class="card-image" style="width: 100%; height: 180px; object-fit: cover;">
+            <img src="<?= htmlspecialchars($p['image_path']) ?>" alt="<?= htmlspecialchars($p['title']) ?>" class="card-image">
           <?php else: ?>
-            <img src="assets/Images/Frame 197-1.png" alt="" class="card-image" style="width: 100%; height: 180px; object-fit: cover;">
+            <img src="assets/Images/Frame 197-1.png" alt="" class="card-image">
           <?php endif; ?>
           <div class="card-content" style="padding: 1rem;">
             <h3 class="card-title"><?= htmlspecialchars($p['title']) ?></h3>
@@ -37,7 +47,7 @@ require __DIR__ . '/includes/header.php';
               Shtuar nga: <?= htmlspecialchars(trim(($p['created_by_name'] ?? '') . ' ' . ($p['created_by_surname'] ?? ''))) ?: '–' ?>
             </p>
             <?php if (!empty($p['pdf_path'])): ?>
-              <a href="<?= htmlspecialchars($p['pdf_path']) ?>" target="_blank">Shkarko PDF</a>
+              <a href="<?= htmlspecialchars($p['pdf_path']) ?>" target="_blank" onclick="event.stopPropagation()">Shkarko PDF</a>
             <?php endif; ?>
           </div>
         </div>

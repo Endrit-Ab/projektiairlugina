@@ -47,7 +47,7 @@
     width: 100%;
     max-width: 1200px;
     height: 50vh;
-    background: url('/assets/Images/backroung.png') center/cover no-repeat;
+    background: url('Images/backroung.png') center/cover no-repeat;
     display: flex;
     border-radius: 20px;
     align-items: center;
@@ -55,6 +55,18 @@
     text-align: center;
     color: white;
     padding: 20px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    pointer-events: none;
   }
 
   .hero-overlay {
@@ -68,6 +80,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    z-index: 1;
   }
 
   .navbar {
@@ -271,26 +284,58 @@
   width: 600px;
   height: 530px;
   color: rgba(255, 255, 255, 0.966);
-  background-image: url(/assets/Images/backkk.png);
+  background-image: url('Images/backkk.png');
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: end;
   flex-direction: column;
   padding: 30px;
+  position: relative;
+ }
+ .cardd::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%);
+  border-radius: 20px;
+  pointer-events: none;
+ }
+ .cardd > * {
+  position: relative;
+  z-index: 1;
  }
 
  .cardd2{
   width: 600px;
   height: 530px;
   color: white;
-  background-image: url(/assets/Images/back.png);
+  background-image: url('Images/back.png');
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: end;
   flex-direction: column;
   padding: 30px;
+  position: relative;
+ }
+ .cardd2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%);
+  border-radius: 20px;
+  pointer-events: none;
+ }
+ .cardd2 > * {
+  position: relative;
+  z-index: 1;
  }
  .fli{
   margin-top: 80px;

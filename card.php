@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="direction">
-            <p><span>Turkey</span> > <span>Istanbul</span> CVK Park Bosphorus Hotel Istanbul</p>
+            <p><span>Tirana</span> > <span>Dubai</span> Dubai International Airport (DXB)</p>
         </div>
         <div class="ticket-price">
             <div class="ticket">
@@ -45,7 +45,7 @@
                         <h1>Emirates A380 Airbus</h1>
                     </div>
                     <div class="S240">
-                        <h1><span>$240</span></h1>
+                        <h1><span>€399</span></h1>
                     </div>
                 </div>
                 <div class="return">
@@ -53,7 +53,7 @@
                         <p>Return Wed, Dec 8</p>
                     </div>
                     <div class="hours">
-                        <p>2h 28m</p>
+                        <p>3h 30m</p>
                     </div>
                 </div>
                 <div class="plane-accesories">
@@ -67,10 +67,10 @@
                 <div class="plane-arrive">
                     <div class="newark">
                         <div class="inline">
-                            <h2>12:00 pm</h2> 
+                            <h2>06:30 am</h2> 
                         </div>
                         <div class="inline">
-                            <p>Newark(EWR)</p>
+                            <p>Tirana (TIA)</p>
                         </div>
                     </div>
                     <div class="plane-direction">
@@ -81,7 +81,7 @@
                             <h2>12:00 pm</h2>
                         </div>
                         <div class="inline">
-                            <p>Newark(EWR)</p>
+                            <p>Dubai (DXB)</p>
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         <p>Discount</p>
                     </div>
                     <div class="d-price">
-                        <p>$400</p>
+                        <p>€0</p>
                     </div>
                 </div>
                 <div class="service-fee">
@@ -118,7 +118,7 @@
                         <p>Services fee</p>
                     </div>
                     <div class="d-price">
-                        <p>$400</p>
+                        <p>€0</p>
                     </div>
                 </div>
                 <div class="total">
@@ -126,7 +126,7 @@
                         <p>Total</p>
                     </div>
                     <div class="d-price">
-                        <p>$400</p>
+                        <p>€399</p>
                     </div>
                 </div>
                </div>

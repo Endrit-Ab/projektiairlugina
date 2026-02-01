@@ -40,16 +40,16 @@
        <div class="section-container">
             <div class="section">
                 <div class="destinations">
-                    <p><span>Turkey</span> > <span>Istanbul </span> > CVN Park Bosphorus Hotel Istanbul </p>
+                    <p><span>Tirana</span> > <span>Dubai</span> > Dubai International Airport (DXB)</p>
                 </div>
                 <div class="plane-type">
                     <h2>Emirates A380 Airbus</h2>
-                    <h2><span>$240</span></h2>
+                    <h2><span>€399</span></h2>
                 </div>
                 <div class="location-btn">
                     <div class="location">
                         <img src="assets/Images/location-logo.png" alt="location-logo">
-                        <p>Gumussuyu Mah.Inonu Cd.No:8,Istanbul 34437</p>
+                        <p>Dubai International Airport (DXB), Dubai, United Arab Emirates</p>
                     </div>
                     <div class="btn">
                         <button type="submit"><a href="card.php">Book now</a></button>
@@ -93,7 +93,7 @@
                         <h4>Return Wed, Dec 8</h4>
                     </div>
                     <div class="wed">
-                        <h4>2h 28min</h4>
+                        <h4>3h 30min</h4>
                     </div>
                 </div>
                 <div class="plane-accesories">
@@ -107,10 +107,10 @@
                 <div class="plane-arrive">
                     <div class="newark">
                         <div class="inline">
-                            <h2>12:00 pm</h2>
+                            <h2>06:30 am</h2>
                         </div>
                         <div class="inline">
-                            <p>Newark(EWR)</p>
+                            <p>Tirana (TIA)</p>
                         </div>
                     </div>
                     <div class="plane-direction">
@@ -121,7 +121,7 @@
                             <h2>12:00 pm</h2>
                         </div>
                         <div class="inline">
-                            <p>Newark(EWR)</p>
+                            <p>Dubai (DXB)</p>
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                         <h4>Return Wed, Dec 8</h4>
                     </div>
                     <div class="wed">
-                        <h4>2h 28min</h4>
+                        <h4>3h 30min</h4>
                     </div>
                 </div>
                 <div class="plane-accesories">
@@ -148,10 +148,10 @@
                 <div class="plane-arrive">
                     <div class="newark">
                         <div class="inline">
-                            <h2>12:00 pm</h2>
+                            <h2>06:30 am</h2>
                         </div>
                         <div class="inline">
-                            <p>Newark(EWR)</p>
+                            <p>Tirana (TIA)</p>
                         </div>
                     </div>
                     <div class="plane-direction">
@@ -162,7 +162,7 @@
                             <h2>12:00 pm</h2>
                         </div>
                         <div class="inline">
-                            <p>Newark(EWR)</p>
+                            <p>Dubai (DXB)</p>
                         </div>
                     </div>
                 </div>

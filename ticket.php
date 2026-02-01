@@ -39,20 +39,20 @@
 
         </div>
         <div class="direction">
-            <p><span>Turkey > Istanbul</span> > CVC Park Bosphorus Hotel Instanbul</p>
+            <p><span>Tirana > Dubai</span> Dubai International Airport (DXB)</p>
         </div>
         <div class="emirate">
             <div class="airbus">
                 <h2>Emirates A380 Airbus</h2>
             </div>
             <div class="money">
-                <h2>$240</h2>
+                <h2>€399</h2>
             </div>
 
         </div>
         <div class="loc">
             <img src="assets/Images/location-logo.png" alt="location-logo">
-            <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
+            <p>Dubai International Airport (DXB), Dubai, United Arab Emirates</p>
         </div>
         <div class="ticket-box">
             <div class="boarding-num">
@@ -73,7 +73,7 @@
                             </div>
                             <div class="date-text">
                                 <h4>Date</h4>
-                                <p>Preshevë(AL)</p>
+                                <p>Wed, Dec 8</p>
                             </div>
                         </div>
                         <div class="date-container">
@@ -82,7 +82,7 @@
                             </div>
                             <div class="date-text">
                                 <h4>Flight time</h4>
-                                <p>12:00</p>
+                                <p>3h 30m</p>
                             </div>
                         </div>
                         <div class="date-container">
@@ -114,15 +114,15 @@
                     </div>
                     <div class="time">
                         <div class="estimated-time">
-                            <h1>12:00pm</h1>
-                            <p>Preshevë(AL)</p>
+                            <h1>06:30 am</h1>
+                            <p>Tirana (TIA)</p>
                         </div>
                         <div class="img">
                             <img src="assets/Images/estimated-plane.png" alt="plane">
                         </div>
                         <div class="estimated-time">
-                            <h1>10:00pm</h1>
-                            <p>Geneva(SUI)</p>
+                            <h1>12:00 pm</h1>
+                            <p>Dubai (DXB)</p>
                         </div>
                     </div>
                     <div class="code">
@@ -162,13 +162,10 @@
             <div class="contact-us">
                 <h2>Contact us</h2>
                 <p>If you have any questions about our Website or our Terms of Use, please contact: </p>
-                <p>
-                    Golobe Group Q.C.S.C
-                </p>
-                <p>Golobe Tower</p>
-                <p>P.O. Box: 22550</p>
-                <p>Doha, State of Qatar</p>
-                <p>Further contact details can be found at golobe.com/help</p>
+                <p>AirLugina</p>
+                <p>Dubai International Airport (DXB)</p>
+                <p>Dubai, United Arab Emirates</p>
+                <p>Further contact details can be found at airlugina.com/contact</p>
             </div>
         </div>
         <div class="space">
